@@ -1,7 +1,5 @@
 # Machine Learning simple experimentation template
 
-done by: [@ricoms](https://github.com/ricoms)
-
 This repo represents a very simple batch job prediction with machine learning. To increment its maturity some test, machine learning metrics validation, and containerization (docker) could be added.
 
 This repo contains a main package `experiment`. There is also 2 data folders 1) `data`, and 2) `ml` that respectively contains 1) the dataset, a sample json (for testing prediction), and a pickle file containing the split done for experimentation during the Exploratory Data Analysis (EDA), and 2) a machine learning model persisted with [joblib](https://joblib.readthedocs.io/en/latest/index.html).
