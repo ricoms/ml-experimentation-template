@@ -4,8 +4,8 @@ import logging
 import os
 from pathlib import Path
 
-import pandas as pd
 import joblib
+import pandas as pd
 from pydantic import BaseModel
 from sklearn.base import BaseEstimator
 
