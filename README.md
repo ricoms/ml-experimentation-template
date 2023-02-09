@@ -1,4 +1,4 @@
-# Trustly challenge
+# Machine Learning simple experimentation template
 
 done by: [@ricoms](https://github.com/ricoms)
 
@@ -16,17 +16,24 @@ The suggested order to explore this is:
 
 Once you have this folder on your machine you will need [Poetry](https://python-poetry.org/). Install it if you don't have it already. You also need [Python](https://www.python.org/) version ">=3.10,<3.11".
 
+I suggest you create a virtual environment for this, if you use `virtualenv` you can just run:
+
+```bash
+make env
+```
+and then activate the virtualen environment running `source venv/bin/activate`.
+
 To install this application run:
 
 ```bash
-poetry install
+make install
 ```
 
 After installing Poetry, and succesfully running the command above, you should be able to run the application commands below:
 
 To run an experiment:
 ```bash
-poetry run python experiment/train.py
+python experiment/train.py
 ```
 
 To run a prediction:
@@ -42,8 +49,8 @@ These commands should be run in the order presented here. As the first should ge
 Running the commands above you should see logs similar to below:
 
 ```bash
-(trustly-challenge-PK_7Mge9-py3.10) Ricardos-MacBook-Air :: personal/trustly/challenge ‹main*› » poetry run python experiment/train.py  
-INFO:root:reading file: /Users/ricardosavii/workspace/personal/trustly/challenge/data/dataset_test_ds_v2-Atualizado.csv
+» python experiment/train.py  
+INFO:root:reading file: data/dataset_test_ds_v2-Atualizado.csv
 INFO:root:saved the model with results below:
 INFO:root:    balanced_accuracy_score: 0.566
 INFO:root:    recall_score: 0.292
@@ -65,10 +72,10 @@ INFO:root:    recall_score: 0.333
 
 
 ```bash
-(trustly-challenge-PK_7Mge9-py3.10) Ricardos-MacBook-Air :: personal/trustly/challenge ‹main*› » poetry run python experiment/predict.py
+» poetry run python experiment/predict.py
 INFO:root:validating payload file...
-INFO:root:getting data from file: /Users/ricardosavii/workspace/personal/trustly/challenge/data/data_sample.json
-INFO:root:getting data from file: /Users/ricardosavii/workspace/personal/trustly/challenge/ml/clf.joblib
+INFO:root:getting data from file: data/data_sample.json
+INFO:root:getting data from file: ml/clf.joblib
 INFO:root:running predictions...
 INFO:root:[{0: 0}, {1: 1}]
 ```
