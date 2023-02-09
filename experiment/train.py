@@ -105,6 +105,7 @@ if __name__ == "__main__":
         skf = pickle.load(f)
 
     best_recall = 0
+    model_persistence_path = output_folder / "clf.joblib"
     for train_index, val_index in skf.split(X, y):
         x_train_fold, x_val_fold = X.loc[train_index], X.loc[val_index]
         y_train_fold, y_val_fold = y.loc[train_index], y.loc[val_index]
@@ -114,7 +115,8 @@ if __name__ == "__main__":
         recall = recall_score(y_val_fold, y_pred)
         if recall > best_recall:
             best_recall = recall
-            dump(clf_pipeline, output_folder / "clf.joblib")
+            dump(clf_pipeline, model_persistence_path)
             logging.info("saved the model with results below:")
         logging.info("    balanced_accuracy_score: %.3f" % bal_acc)
         logging.info("    recall_score: %.3f\n" % recall)
+    logging.info(f"Final model is saved at {model_persistence_path}")
