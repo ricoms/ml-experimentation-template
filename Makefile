@@ -8,7 +8,7 @@ install-dev:
 	pip install -r requirements-dev.txt
 
 train:
-	python experiment/train.py
+	python -m experiment.train
 
 predict:
-	python experiment/predict.py
+	python -m experiment.predict

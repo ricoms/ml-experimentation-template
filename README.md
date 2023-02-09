@@ -38,7 +38,7 @@ python experiment/train.py
 
 To run a prediction:
 ```bash
-poetry run python experiment/predict.py
+python -m experiment.predict
 ```
 
 These commands should be run in the order presented here. As the first should generate a machine learning model file inside `ml` folder. The final prediction output of the `data_sample.json` will be generated inside the `ml` folder too, as `final_output.json`.
